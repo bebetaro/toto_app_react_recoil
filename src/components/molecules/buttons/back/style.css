@@ -1,0 +1,19 @@
+.root {
+  width: 32px;
+  height: 32px;
+
+  /* border: solid 2px black; */
+  border-radius: 50%;
+}
+
+.root img {
+  width: 24px;
+  height: 24px;
+  outline: none;
+}
+
+.root:hover,
+.root:focus {
+  background-color: rgba(157, 157, 157, 0.75);
+  transition: 0.3s;
+}
