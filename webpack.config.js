@@ -22,6 +22,7 @@ module.exports = {
       },
       {
         test: /\.css$/i,
+        exclude: /reboot\.css$/,
         use: [
           MiniCssExtractPlugin.loader,
           {
@@ -33,13 +34,20 @@ module.exports = {
           {
             loader: "css-loader",
             options: {
+              sourceMap: true,
               modules: {
-                exportLocalsConvention: "camelCaseOnly",
-                localIdentName: "[local]",
+                mode: "local",
+                localIdentName: "[folder]__[local]__[hash:base64:5]",
               },
+              importLoaders: 1,
             },
           },
+          "postcss-loader",
         ],
+      },
+      {
+        test: /reboot\.css$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
         test: /\.((otf|ttf|woff|woff2)$)/,
@@ -81,8 +89,9 @@ module.exports = {
     new MiniCssExtractPlugin(),
   ],
   devServer: {
-    contentBase: path.join(__dirname, "dist"),
+    open: true,
     compress: true,
+    host: "0.0.0.0",
     port: 9000,
   },
 };
