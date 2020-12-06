@@ -1,0 +1,28 @@
+.root {
+  display: flex;
+  width: 240px;
+  height: 40px;
+}
+
+.root > div {
+  width: 120px;
+  height: 40px;
+  outline: none;
+}
+
+.name {
+  background-color: lightgray;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.date {
+  background-color: lightgray;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.select {
+  background-color: #2facff;
+  transition: 0.3s;
+}
