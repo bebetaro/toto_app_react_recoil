@@ -1,0 +1,22 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+}
+
+.root > span {
+  padding-bottom: 6px;
+  text-align: start;
+}
+
+.root > input {
+  align-self: center;
+  width: 320px;
+  height: 32px;
+  padding-left: 16px;
+  font-family: "NotoSansRegular", sans-serif;
+  font-size: 16px;
+  color: black;
+  border: 1px solid #444;
+  border-radius: 4px;
+}
