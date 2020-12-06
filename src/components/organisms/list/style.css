@@ -1,0 +1,12 @@
+.root {
+  width: 100%;
+  max-width: 480px;
+
+  /* subtract add button  */
+  height: calc(100% - 60px);
+  overflow: scroll;
+}
+
+.root > div {
+  margin-bottom: 32px;
+}
