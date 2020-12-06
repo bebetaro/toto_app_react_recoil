@@ -1,0 +1,18 @@
+.root {
+  width: 40px;
+  height: 40px;
+  border: solid 2px black;
+  border-radius: 50%;
+}
+
+.root img {
+  width: 32px;
+  height: 32px;
+  outline: none;
+}
+
+.root:hover,
+.root:focus {
+  background-color: lightgray;
+  transition: 0.3s;
+}
