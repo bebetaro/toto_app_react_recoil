@@ -6,7 +6,7 @@ import { Warning } from "../../text/warning";
 import style from "./style.css";
 
 export type Props = {
-  id: string;
+  id: number;
   taskName: string;
   deadline: string;
   onEdit: () => void;
