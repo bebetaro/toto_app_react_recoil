@@ -13,7 +13,6 @@ import { COLOR, SIZE, SORT } from "../../../../constants";
  */
 export const Sort: React.FC = React.memo(function Sort() {
   const [sort, setSort] = useRecoilState(Atoms.sortState);
-  console.log(sort);
   const onClickName = useCallback(() => {
     setSort(SORT.NAME);
   }, []);

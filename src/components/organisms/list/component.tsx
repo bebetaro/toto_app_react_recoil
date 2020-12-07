@@ -1,16 +1,13 @@
 import React from "react";
+import { Task } from "../../../atoms/types";
 import { Row } from "../../molecules/table/row";
 
 import style from "./style.css";
-type Task = {
-  id: string;
-  taskName: string;
-  deadline: string;
-};
+
 export type Props = {
   data: Array<Task>;
-  onEdit: (id: string) => () => void;
-  onDelete: (id: string) => () => void;
+  onEdit: (id: number) => () => void;
+  onDelete: (id: number) => () => void;
 };
 
 /**

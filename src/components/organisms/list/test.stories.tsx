@@ -10,9 +10,10 @@ const sampleData: Props["data"] = Array(100)
   .fill(0)
   .map((_, index) => {
     return {
-      id: String(index),
+      id: index,
       taskName: `Task ${index}`,
       deadline: "2020-12-20",
+      done: false,
     };
   });
 
