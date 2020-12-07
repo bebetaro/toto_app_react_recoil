@@ -16,7 +16,7 @@ export const useListButtonBuilder = () => {
   const setSelectedId = useSetRecoilState(Atoms.selectIdState);
   const setDeleteId = useSetRecoilState(Atoms.deleteIdState);
   const setPage = useSetRecoilState(Atoms.pageState);
-  const setModal = useSetRecoilState(Atoms.modalState);
+  const setModal = useSetRecoilState(Atoms.openState);
 
   const onEdit = useCallback(
     (id: number) => () => {
