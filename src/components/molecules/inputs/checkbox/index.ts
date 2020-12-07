@@ -1,4 +1,4 @@
-export { Input } from './component'
+export { Checkbox } from './component'
 export type { Props } from './component'
 
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { COLOR, SIZE } from "../../../../constants";
-import { Input } from "../../../atoms/input";
+import { InputForm } from "../../../atoms/inputs/input-form";
 import { Text } from "../../../atoms/text";
 import style from "./style.css";
 
@@ -19,7 +19,7 @@ export const Form: React.FC<Props> = React.memo(function Form(props) {
       <Text size={SIZE.SMALL} color={COLOR.BLACK}>
         {props.label}
       </Text>
-      <Input atomKey={props.atomKey} type={props.type} />
+      <InputForm atomKey={props.atomKey} type={props.type} />
     </label>
   );
 });

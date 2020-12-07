@@ -1,6 +1,6 @@
 import { atom, atomFamily } from "recoil";
 import { PAGE } from "../constants";
-import { Order, Sort, Task, ValuesOf } from "./types";
+import { ModalType, Order, Sort, Task, ValuesOf } from "./types";
 
 // app state
 export const pageState = atom<ValuesOf<typeof PAGE>>({
@@ -18,8 +18,13 @@ export const deleteIdState = atom<number>({
   default: Infinity,
 });
 
-export const modalState = atom<boolean>({
+export const modalState = atom<ModalType>({
   key: "modalState",
+  default: "taskInfo",
+});
+
+export const openState = atom<boolean>({
+  key: "openState",
   default: false,
 });
 

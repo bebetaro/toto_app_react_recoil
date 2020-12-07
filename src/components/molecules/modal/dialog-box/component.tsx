@@ -7,7 +7,7 @@ import style from "./style.css";
 export type Props = {
   taskName: string;
   onDelete: () => void;
-  onCloseModal: () => void;
+  onReturnTaskInfo: () => void;
 };
 
 /**
@@ -21,7 +21,9 @@ export const DialogBox: React.FC<Props> = React.memo(function DialogBox(props) {
         を削除してもよろしいですか？`}
       </Text>
       <div>
-        <Button.Secondary onClick={props.onCloseModal}>いいえ</Button.Secondary>
+        <Button.Secondary onClick={props.onReturnTaskInfo}>
+          いいえ
+        </Button.Secondary>
         <Button.Primary onClick={props.onDelete}>はい</Button.Primary>
       </div>
     </div>

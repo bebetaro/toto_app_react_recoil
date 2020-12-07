@@ -18,7 +18,7 @@ export const Page: React.FC = React.memo(function Page() {
   const [height, setHeight] = React.useState<number>(0);
   const [width, setWidth] = React.useState<number>(0);
   const page = useRecoilValue(Atoms.pageState);
-  const isOpen = useRecoilValue(Atoms.modalState);
+  const isOpen = useRecoilValue(Atoms.openState);
 
   // set initial size
   React.useEffect(() => {

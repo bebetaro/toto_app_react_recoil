@@ -41,3 +41,8 @@ export const SORT = {
   NAME: "taskName",
   DEADLINE: "deadline",
 } as const;
+
+export const MODAL = {
+  DELETE: "delete",
+  TASK_INFO: "taskInfo",
+} as const;

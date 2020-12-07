@@ -1,12 +1,9 @@
 import React from "react";
 import ReactModal from "react-modal";
-import { DialogBox } from "../dialog-box";
 
 export type Props = {
   isOpen: boolean;
-  taskName: string;
   onCloseModal: () => void;
-  onDelete: () => void;
 };
 
 ReactModal.defaultStyles = {
@@ -37,11 +34,7 @@ export const Modal: React.FC<Props> = React.memo(function Modal(props) {
       shouldFocusAfterRender
       onRequestClose={props.onCloseModal}
     >
-      <DialogBox
-        taskName={props.taskName}
-        onCloseModal={props.onCloseModal}
-        onDelete={props.onDelete}
-      />
+      {props.children}
     </ReactModal>
   );
 });
