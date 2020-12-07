@@ -2,35 +2,30 @@ import { useRecoilCallback } from "recoil";
 import * as Atoms from "../../../atoms";
 import { ValuesOf } from "../../../atoms/types";
 import { ATOMS_FAMILY, PAGE } from "../../../constants";
+import { storage } from "../../../storage";
 
 export const useOnClick = (page: ValuesOf<typeof PAGE>) => {
   const onCreate = useRecoilCallback(({ snapshot, set }) => async () => {
+    const id = Date.now();
     const taskName = await snapshot.getPromise(
       Atoms.inputAtomFamily(ATOMS_FAMILY.TASK_NAME)
     );
     const deadline = await snapshot.getPromise(
       Atoms.inputAtomFamily(ATOMS_FAMILY.DEAD_LINE)
     );
-    const id = Date.now().toString();
-    set(Atoms.todoState, (prevState) => ({
-      ...prevState,
-      ...{ [id]: { taskName, deadline } },
-    }));
+    await storage.save({ id, taskName, deadline, done: false });
     set(Atoms.pageState, PAGE.LIST);
   });
 
   const onUpdate = useRecoilCallback(({ snapshot, set }) => async () => {
-    const newTask = await snapshot.getPromise(
+    const taskName = await snapshot.getPromise(
       Atoms.inputAtomFamily(ATOMS_FAMILY.TASK_NAME)
     );
-    const newDeadline = await snapshot.getPromise(
+    const deadline = await snapshot.getPromise(
       Atoms.inputAtomFamily(ATOMS_FAMILY.DEAD_LINE)
     );
     const id = await snapshot.getPromise(Atoms.selectIdState);
-    set(Atoms.todoState, (prevState) => ({
-      ...prevState,
-      ...{ [id]: { taskName: newTask, deadline: newDeadline } },
-    }));
+    await storage.save({ taskName, deadline, done: false, id });
     set(Atoms.pageState, PAGE.LIST);
   });
 
