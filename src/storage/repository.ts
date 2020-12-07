@@ -25,4 +25,12 @@ export class TodoRepository {
   async delete(id: number): Promise<void> {
     await db.todos.delete(id);
   }
+
+  async update(
+    id: number,
+    property: string,
+    newVal: string | boolean
+  ): Promise<void> {
+    await db.todos.update(id, { [property]: newVal });
+  }
 }
