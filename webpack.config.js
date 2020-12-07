@@ -2,11 +2,12 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ProgressBarPlugin = require("progress-bar-webpack-plugin");
+const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
 
 module.exports = {
   entry: path.join(__dirname, "src/index.tsx"),
   output: {
-    path: path.join(__dirname, "dist"),
+    path: path.join(__dirname, "docs"),
     filename: "bundle.js",
   },
   module: {
@@ -42,7 +43,6 @@ module.exports = {
               importLoaders: 1,
             },
           },
-          "postcss-loader",
         ],
       },
       {
@@ -87,6 +87,10 @@ module.exports = {
       favicon: path.join(__dirname, "public/favicon.ico"),
     }),
     new MiniCssExtractPlugin(),
+    new WorkboxWebpackPlugin.GenerateSW({
+      clientsClaim: true,
+      skipWaiting: true,
+    }),
   ],
   devServer: {
     open: true,
