@@ -1,0 +1,11 @@
+.root {
+  min-width: 320px;
+  padding: 16px 0;
+  background-color: #444;
+  border-radius: 4px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+}

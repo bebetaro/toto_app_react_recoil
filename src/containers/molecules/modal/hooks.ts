@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useRecoilValue } from "recoil";
 import * as Atoms from "../../../atoms";
 import { Task } from "../../../atoms/types";
-import { Modal } from "../../../components/molecules/modal/modal";
 import { storage } from "../../../storage";
 
 export const useLaunchModal = () => {

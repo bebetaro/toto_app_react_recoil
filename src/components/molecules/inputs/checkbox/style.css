@@ -1,0 +1,20 @@
+.root {
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  background-image: url("../../../../assets/images/icon-24-offline.svg");
+}
+
+.root:hover,
+.root:focus {
+  opacity: 0.7;
+}
+
+.root > input {
+  display: none;
+}
+
+.checked {
+  background-image: url("../../../../assets/images/icon-24-verified.svg");
+}

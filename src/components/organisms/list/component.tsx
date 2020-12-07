@@ -6,8 +6,7 @@ import style from "./style.css";
 
 export type Props = {
   data: Array<Task>;
-  onEdit: (id: number) => () => void;
-  onDelete: (id: number) => () => void;
+  onOpenModal: (id: number) => () => void;
 };
 
 /**
@@ -20,8 +19,8 @@ export const List: React.FC<Props> = React.memo(function List(props) {
         <Row
           key={task.id}
           {...task}
-          onEdit={props.onEdit(task.id)}
-          onDelete={props.onDelete(task.id)}
+          isDone={task.done}
+          onClick={props.onOpenModal(task.id)}
         />
       ))}
     </section>
