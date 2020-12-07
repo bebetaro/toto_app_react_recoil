@@ -1,6 +1,6 @@
 import React from "react";
 import { useRecoilState } from "recoil";
-import { inputAtomFamily } from "../../../atoms";
+import { inputAtomFamily } from "../../../../atoms";
 import style from "./style.css";
 
 export type Props = {
@@ -9,9 +9,9 @@ export type Props = {
 };
 
 /**
- * Input Component
+ * InputForm Component
  */
-export const Input: React.FC<Props> = React.memo(function Input(props) {
+export const InputForm: React.FC<Props> = React.memo(function InputForm(props) {
   const [value, setValue] = useRecoilState(inputAtomFamily(props.atomKey));
   const onChange = React.useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
