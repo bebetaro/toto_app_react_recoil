@@ -1,8 +1,8 @@
-export type Todos = {
-  [id: string]: {
-    taskName: string;
-    deadline: string;
-  };
+export type Task = {
+  id: number;
+  taskName: string;
+  deadline: string;
+  done: boolean;
 };
 
 export type ValuesOf<T> = T[keyof T];

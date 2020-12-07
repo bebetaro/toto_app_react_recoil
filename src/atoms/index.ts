@@ -5,8 +5,6 @@ export {
   modalState,
   orderState,
   sortState,
-  inputAtomFamily,
   todoState,
+  inputAtomFamily,
 } from "./state";
-
-export { todoSelector, taskSelector } from "./selector";

@@ -1,6 +1,6 @@
 import { atom, atomFamily } from "recoil";
 import { PAGE } from "../constants";
-import { Order, Sort, Todos, ValuesOf } from "./types";
+import { Order, Sort, Task, ValuesOf } from "./types";
 
 // app state
 export const pageState = atom<ValuesOf<typeof PAGE>>({
@@ -8,14 +8,14 @@ export const pageState = atom<ValuesOf<typeof PAGE>>({
   default: "list",
 });
 
-export const selectIdState = atom<string>({
+export const selectIdState = atom<number>({
   key: "selectIdState",
-  default: "",
+  default: Infinity,
 });
 
-export const deleteIdState = atom<string>({
+export const deleteIdState = atom<number>({
   key: "deleteIdState",
-  default: "",
+  default: Infinity,
 });
 
 export const modalState = atom<boolean>({
@@ -24,6 +24,11 @@ export const modalState = atom<boolean>({
 });
 
 // data state
+export const todoState = atom<Task[]>({
+  key: "todoState",
+  default: [],
+});
+
 export const orderState = atom<Order>({
   key: "orderState",
   default: "asc",
@@ -37,9 +42,4 @@ export const sortState = atom<Sort>({
 export const inputAtomFamily = atomFamily({
   key: "inputAtomFamily",
   default: "",
-});
-
-export const todoState = atom<Todos>({
-  key: "todoState",
-  default: {},
 });
