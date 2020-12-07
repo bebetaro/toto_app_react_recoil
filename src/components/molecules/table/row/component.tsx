@@ -1,16 +1,18 @@
 import React from "react";
-import { COLOR, SIZE, WORDS } from "../../../../constants";
+import classnames from "classnames";
+import { COLOR, SIZE } from "../../../../constants";
+import { Button } from "../../../atoms/button";
 import { Text } from "../../../atoms/text";
-import { Normal } from "../../buttons";
+import { Checkbox } from "../../inputs/checkbox";
 import { Warning } from "../../text/warning";
 import style from "./style.css";
 
 export type Props = {
   id: number;
+  isDone: boolean;
   taskName: string;
   deadline: string;
-  onEdit: () => void;
-  onDelete: () => void;
+  onClick: () => void;
 };
 
 /**
@@ -18,24 +20,25 @@ export type Props = {
  */
 export const Row: React.FC<Props> = React.memo(function Row(props) {
   return (
-    <div className={style.root}>
-      <div className={style.taskInfo}>
-        <p className={style.para}>
-          <Text size={SIZE.MEDIUM} color={COLOR.BLACK}>
-            {`${WORDS.TASK_NAME}: ${props.taskName}`}
-          </Text>
-        </p>
-        <p className={style.para}>
-          <Text size={SIZE.MEDIUM} color={COLOR.BLACK}>
-            {`${WORDS.DEADLINE}: ${props.deadline}`}
-          </Text>
-        </p>
-      </div>
-      <div className={style.buttons}>
-        <Normal onClick={props.onEdit}>{WORDS.EDIT}</Normal>
-        <Normal onClick={props.onDelete}>{WORDS.DELETE}</Normal>
-      </div>
-      <Warning deadline={props.deadline} />
+    <div
+      className={classnames({
+        [style.root]: true,
+        [style.done]: props.isDone,
+      })}
+    >
+      <Checkbox id={props.id} isDone={props.isDone} />
+      <Button onClick={props.onClick} isDisabled={props.isDone}>
+        <Text size={SIZE.MEDIUM} color={COLOR.BLACK}>
+          {props.taskName}
+        </Text>
+      </Button>
+      {props.isDone ? (
+        <Text size={SIZE.SMALL} color={COLOR.BLACK}>
+          このタスクは完了しました
+        </Text>
+      ) : (
+        <Warning deadline={props.deadline} />
+      )}
     </div>
   );
 });

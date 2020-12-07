@@ -26,5 +26,10 @@ export const Warning: React.FC<Props> = React.memo(function Warning(props) {
       >{`このタスクは${rest}日後に期限を迎えます`}</Text>
     );
   }
-  return <div />;
+  return (
+    <Text
+      size={SIZE.SMALL}
+      color={COLOR.BLACK}
+    >{`期限: ${props.deadline}`}</Text>
+  );
 });
