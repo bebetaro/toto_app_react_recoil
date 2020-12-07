@@ -10,3 +10,5 @@ export type ValuesOf<T> = T[keyof T];
 export type Order = "asc" | "desc";
 
 export type Sort = "taskName" | "deadline";
+
+export type ModalType = "taskInfo" | "delete";
