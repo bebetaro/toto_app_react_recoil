@@ -6,10 +6,8 @@
   border-radius: 50%;
 }
 
-.root img {
-  width: 24px;
-  height: 24px;
-  outline: none;
+.root > button {
+  background: no-repeat center url("../../../../assets/images/icon-24-back.svg");
 }
 
 .root:hover,

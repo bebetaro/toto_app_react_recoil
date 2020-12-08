@@ -5,10 +5,9 @@
   border-radius: 50%;
 }
 
-.root img {
-  width: 32px;
-  height: 32px;
-  outline: none;
+.root > button {
+  background: no-repeat center
+    url("../../../../assets/images/icon-24-expansion.svg");
 }
 
 .root:hover,

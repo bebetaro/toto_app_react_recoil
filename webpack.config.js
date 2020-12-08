@@ -93,6 +93,7 @@ module.exports = {
     }),
   ],
   devServer: {
+    contentBase: "./docs",
     open: true,
     compress: true,
     host: "0.0.0.0",
