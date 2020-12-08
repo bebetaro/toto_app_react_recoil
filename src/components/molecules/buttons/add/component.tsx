@@ -1,11 +1,9 @@
 import React from "react";
 import { useSetRecoilState } from "recoil";
 import { Button } from "../../../atoms/button";
-import add from "../../../../assets/images/icon-24-expansion.svg";
 import style from "./style.css";
 import { pageState } from "../../../../atoms";
 import { PAGE } from "../../../../constants";
-import { Image } from "../../../atoms/image";
 
 /**
  * Add Component
@@ -17,9 +15,7 @@ export const Add: React.FC = function Add() {
   }, []);
   return (
     <div className={style.root}>
-      <Button onClick={onClick}>
-        <Image src={add} alt={"Add Button"} />
-      </Button>
+      <Button onClick={onClick} />
     </div>
   );
 };

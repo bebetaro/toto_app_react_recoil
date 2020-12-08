@@ -1,11 +1,9 @@
 import React from "react";
 import { useSetRecoilState } from "recoil";
 import { Button } from "../../../atoms/button";
-import backImage from "../../../../assets/images/icon-24-back.svg";
 import style from "./style.css";
 import { pageState } from "../../../../atoms";
 import { PAGE } from "../../../../constants";
-import { Image } from "../../../atoms/image";
 
 /**
  * Back Component
@@ -17,9 +15,7 @@ export const Back: React.FC = React.memo(function Back() {
   }, []);
   return (
     <div className={style.root}>
-      <Button onClick={onClick}>
-        <Image src={backImage} alt={"Back Button"} />
-      </Button>
+      <Button onClick={onClick} />
     </div>
   );
 });

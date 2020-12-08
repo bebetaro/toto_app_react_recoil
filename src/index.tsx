@@ -14,13 +14,13 @@ const App = () => {
 };
 
 ReactModal.setAppElement("#root");
-
+const target = document.querySelector("#root");
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("service-worker.js").then(() => {
-    const target = document.querySelector("#root");
-
     if (target) {
       ReactDOM.render(<App />, target);
     }
   });
+} else {
+  ReactDOM.render(<App />, target);
 }
