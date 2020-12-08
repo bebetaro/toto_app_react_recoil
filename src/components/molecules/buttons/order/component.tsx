@@ -5,7 +5,6 @@ import descImage from "../../../../assets/images/icon-24-arrow-down.svg";
 import * as Atoms from "../../../../atoms";
 import { COLOR, ORDER, SIZE } from "../../../../constants";
 import { Button } from "../../../atoms/button";
-import { Image } from "../../../atoms/image";
 import style from "./style.css";
 import { Text } from "../../../atoms/text";
 
@@ -21,7 +20,7 @@ export const Order: React.FC = React.memo(function Order() {
     <div className={style.root}>
       <Button onClick={onClick}>
         <div className={style.inside}>
-          <Image
+          <img
             src={order === ORDER.ASC ? ascImage : descImage}
             alt={"order image"}
             height={24}
