@@ -18,7 +18,7 @@ export const Add: React.FC = function Add() {
   return (
     <div className={style.root}>
       <Button onClick={onClick}>
-        <Image src={add} alt={"Add Button"} />
+        <Image src={add} alt={"Add Button"} height={32} width={32} />
       </Button>
     </div>
   );

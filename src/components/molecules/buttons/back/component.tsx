@@ -18,7 +18,7 @@ export const Back: React.FC = React.memo(function Back() {
   return (
     <div className={style.root}>
       <Button onClick={onClick}>
-        <Image src={backImage} alt={"Back Button"} />
+        <Image src={backImage} alt={"Back Button"} height={24} width={24} />
       </Button>
     </div>
   );

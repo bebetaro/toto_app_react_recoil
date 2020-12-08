@@ -24,6 +24,8 @@ export const Order: React.FC = React.memo(function Order() {
           <Image
             src={order === ORDER.ASC ? ascImage : descImage}
             alt={"order image"}
+            height={24}
+            width={24}
           />
           <Text size={SIZE.SMALL} color={COLOR.BLACK}>
             {order === ORDER.ASC ? "昇順" : "降順"}
